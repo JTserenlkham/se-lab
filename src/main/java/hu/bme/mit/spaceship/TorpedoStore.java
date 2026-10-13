@@ -36,7 +36,7 @@ public class TorpedoStore {
     boolean success = false;
 
     // simulate random overheating of the launcher bay which prevents firing
-    double r = ThreadLocalRandom.current().nextDouble();
+    double r = ThreadLocalRandom.current().nextDouble(); //fixed the issue from sonarqube
 
     if (r >= FAILURE_RATE) {
       // successful firing
@@ -54,7 +54,8 @@ public class TorpedoStore {
     return this.torpedoCount <= 0;
   }
 
-  public int getTorpedoCount() {
+  public int getTorpedoCount() 
+  {
     return this.torpedoCount;
   }
 }
